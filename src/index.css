@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-gray-50;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-indigo-600 via-indigo-500 to-indigo-600 animate-gradient bg-[length:200%_auto];
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-soft hover:translate-y-[-2px];
+  }
+
+  .input-focus {
+    @apply focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500;
+  }
+
+  .button-glow {
+    @apply hover:shadow-glow transition-shadow duration-300;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
